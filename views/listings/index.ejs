@@ -1,0 +1,23 @@
+<% layout('/layouts/boilerplate') %>
+<% block('kill', title) -%>
+
+
+ 
+  <h3>All listings</h3>
+  <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1">
+ <% allListings.forEach((listing) => { %> 
+  <a href="/listings/<%=listing._id%>" class="listing-link">
+  <div class="card listing-card" >
+    
+    <img src="<%=listing.image%>" class="card-img-top" alt="...">
+    <div class="card-img-overlay"></div>
+    <div class="card-body">
+      <p class="card-text">
+    <b>    <%=listing.title%><br></b>
+        &#8377;<%=listing.price.toLocaleString("en-IN")%>
+      </p>
+    </div>
+  </div>
+</a>
+  <% }) %>
+</div>
